@@ -28,5 +28,12 @@ a: 0xbffff07c
 b: 0xbffff078
 base frame pointer: 0xbffff09e
 4. 0x0804851b
-5. I don't understand this question. There are 9 words between the end of buffer1 and the return address. 0x00000009
+5. I don't understand this question. There are 9 words between the end of buffer1 and the return address. 0x00000024 bytes.
 6. 0x0804852b
+
+Task 4:
+Since the result of validating the password is stored in a local variable that is positioned on the stack just above the string that we can overflow it is a simple matter of entering a string with 17 characters where the last character has the value 1. The easiest way to check the length of the string to make sure it isn't larger than the buffer before copying.
+
+2. Theoretically any string that is 17 characters long where the last character is \x01. This value would overflow into higher memory where the auth_flag variable is stored.
+
+4. I was unable to execute the attack. I have no idea if the issue is with my string, my code that sets the environment variable, or with my virtual machine setup. I have tried everything I could think of and there are still a lot of errors. If you could look over my code and give me an idea of where the issues are I would appreciate that.
